@@ -1,4 +1,8 @@
 /* eslint-disable no-unused-vars */
+const moment = require('moment')
+const ApiError = require('../src/Error/ApiError')
+const {conflict} = ApiError
+
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -10,12 +14,13 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       nome: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(150),
         allowNull: false,
       },
       CPF: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(11),
         allowNull: false,
+        unique: true
       },
       birthDate: {
         type: Sequelize.DATEONLY,
@@ -24,10 +29,14 @@ module.exports = {
       createdAt: {
         allowNull: false,
         type: Sequelize.DATEONLY,
-        field: 'registerDate'
+        field: 'registerDate',
+        defaultValue: new Date()
       },
       familyIncome: {
-        type: Sequelize.DECIMAL
+        type: Sequelize.DECIMAL,
+        validate: {
+          min: 0
+        }
       }
     });
   },

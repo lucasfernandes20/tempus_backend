@@ -1,9 +1,7 @@
 const mainRoute = require('express').Router({mergeParams: true})
 const rescue = require('express-rescue')
+const {postClients} = require('../controllers')
 
-mainRoute.get('/', rescue(async (req, res) => {
-  console.log('oi')
-  res.status(200).json({message: 'abriu o servidor amigo'})
-}))
+mainRoute.post('/user', rescue(postClients))
 
 module.exports = mainRoute

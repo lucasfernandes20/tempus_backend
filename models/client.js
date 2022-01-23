@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       familyIncome: DataTypes.DECIMAL
     },
     {
+      timestamps: false,
       createdAt: 'registerDate'
     }
   )
