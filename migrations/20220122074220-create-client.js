@@ -1,8 +1,4 @@
 /* eslint-disable no-unused-vars */
-const moment = require('moment')
-const ApiError = require('../src/Error/ApiError')
-const {conflict} = ApiError
-
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {

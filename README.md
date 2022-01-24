@@ -10,6 +10,8 @@ Projeto relizado para processo seletivo da tempus digital.
   - [Feito com](#feito-com)
   - [Continuando a Aplicação](#continuando-a-aplicação)
   - [Autor](#autor)
+  - [Como rodar a aplicação](#Como-rodar-a-aplicação)
+  - [Banco de dados](#Modelo-do-banco-de-dados)
 
 ## Visão Geral
 
@@ -85,7 +87,7 @@ Endpoints deverão:
   ```
   
   
-  ## MODELO DO BANCO DE DADOS:
+  ## Modelo do banco de dados:
   
   ```yaml
       {
