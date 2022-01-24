@@ -13,27 +13,23 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      nome: {
+      name: {
         type: Sequelize.STRING(150),
-        allowNull: false,
       },
       CPF: {
         type: Sequelize.STRING(11),
-        allowNull: false,
         unique: true
       },
       birthDate: {
         type: Sequelize.DATEONLY,
-        allowNull: false,
       },
       createdAt: {
-        allowNull: false,
         type: Sequelize.DATEONLY,
         field: 'registerDate',
         defaultValue: new Date()
       },
       familyIncome: {
-        type: Sequelize.DECIMAL,
+        type: Sequelize.DECIMAL(20, 2),
         validate: {
           min: 0
         }

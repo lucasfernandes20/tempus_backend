@@ -2,9 +2,9 @@ const { CREATED } = require("http-status-codes")
 const {postClientsService} = require("../services")
 
 const postClients = async (req, res) => {
-  const client = req.body
+  const {body} = req
 
-  const newClient = await postClientsService(client)
+  const newClient = await postClientsService(body)
   
   return res.status(CREATED).json(newClient)
 }

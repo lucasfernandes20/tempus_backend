@@ -1,7 +1,9 @@
 const mainRoute = require('express').Router({mergeParams: true})
-const rescue = require('express-rescue')
-const {postClients} = require('../controllers')
+const error = require('../middlewares/error')
+const clientRoute = require('./clientRoute')
 
-mainRoute.post('/user', rescue(postClients))
+mainRoute.use(clientRoute)
+
+mainRoute.use(error)
 
 module.exports = mainRoute
